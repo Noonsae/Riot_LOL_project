@@ -60,7 +60,7 @@ export default async function ChampionDataFetch() {
 }
 
 // 3.아이템 정보 가져오기
-export async function ItemsDataFetch() {
+export async function ItemDataFetch() {
   try {
     // 최신 버전 정보를 먼저 가져옴
     const latestVersion = await fetchLatestVersion();
@@ -76,16 +76,16 @@ export async function ItemsDataFetch() {
     }
 
     // JSON 형태로 데이터를 파싱
-    const itemsData = await itemRes.json();
+    const itemData = await itemRes.json();
 
     // 데이터를 확인. 데이터가 없을 경우 에러 발생
-    if (!itemsData.data) {
+    if (!itemData.data) {
       throw new Error("아이템 데이터가 비어있습니다.");
     }
 
     // 성공적으로 데이터를 가져오면 아이템 데이터와 버전을 반환
     return {
-      data: itemsData.data,
+      data: itemData.data,
       version: latestVersion,
     };
   } catch (error) {
