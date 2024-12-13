@@ -24,7 +24,7 @@ async function fetchLatestVersion() {
 }
 
 // 2.챔피언 정보 가져오기
-export default async function ChampionDataFetch() {
+export default async function fetchChampionData() {
   try {
     // 최신 버전 정보를 먼저 가져옴
     const latestVersion = await fetchLatestVersion();
@@ -60,7 +60,7 @@ export default async function ChampionDataFetch() {
 }
 
 // 3.아이템 정보 가져오기
-export async function ItemDataFetch() {
+export async function fetchItemData() {
   try {
     // 최신 버전 정보를 먼저 가져옴
     const latestVersion = await fetchLatestVersion();
