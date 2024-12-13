@@ -16,6 +16,7 @@ export interface ChampionDetails {
   spells: Spell[];
   passive: Passive;
   skins: Skin[];
+  image: Image;
 }
 
 // 스펠 데이터 타입
