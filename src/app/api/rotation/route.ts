@@ -10,7 +10,7 @@ export async function GET() {
       { error: "Riot API key is missing in environment variables." },
       { status: 500 }
     );
-  };
+  }
 
   try {
     const response = await fetch(RIOT_API_URL, {
@@ -21,7 +21,7 @@ export async function GET() {
 
     if (!response) {
       throw new Error("패치 데이터가 없습니다");
-    };
+    }
 
     const data = await response.json();
     return NextResponse.json(data);
@@ -30,5 +30,5 @@ export async function GET() {
       { error: "An unexpected error occurred." },
       { status: 500 }
     );
-  };
-};
+  }
+}
