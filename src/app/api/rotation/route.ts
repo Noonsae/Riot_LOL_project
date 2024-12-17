@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
+import { ROTATION_API_URL } from "@/constants/apiUrls";
+import { ChampionRotation } from "@/types/rotation";
 
 export async function GET() {
-  const RIOT_API_KEY = process.env.RIOT_API_KEY;
-  const RIOT_API_URL =
-    "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations";
+  const RIOT_API_KEY = process.env.NEXT_PUBLIC_RIOT_API_KEY;
 
   if (!RIOT_API_KEY) {
     return NextResponse.json(
@@ -13,19 +13,25 @@ export async function GET() {
   }
 
   try {
-    const response = await fetch(RIOT_API_URL, {
+    const response = await fetch(ROTATION_API_URL, {
+      method: "GET",
       headers: {
         "X-Riot-Token": RIOT_API_KEY,
       },
+      next: {
+        revalidate: 86400,
+      },
     });
 
-    if (!response) {
-      throw new Error("패치 데이터가 없습니다");
+    if (!response.ok) {
+      throw new Error(`패치 데이터가 없습니다 ${response.status}`);
     }
 
-    const data = await response.json();
+    const data: ChampionRotation = await response.json();
     return NextResponse.json(data);
-  } catch (error) {
+  } catch (error: any) {
+    console.error("Error fetching champion Rotation data", error.message);
+
     return NextResponse.json(
       { error: "An unexpected error occurred." },
       { status: 500 }
