@@ -12,7 +12,7 @@ export type Champion = {
 };
 
 // 챔피언 상세 정보를 나타내는 타입 (기본 정보에 추가 정보 포함)
-export type ChampionDetail = Champion & {
+export type ChampionDetails = Champion & {
   lore: string;
   skins: ChampionSkin[]; // 챔피언의 스킨 목록
   spells: ChampionSkill[]; // 챔피언의 스킬 목록
@@ -56,11 +56,11 @@ export type ChampionSkill = {
 
 
 // 챔피언 상세 정보 API 응답 형태를 나타내는 타입
-export type ChampionDetailResponse = {
+export type ChampionDetailsResponse = {
   type: string;
   format: string;
   version: string;
   data: {
-    [key: string]: ChampionDetail;
+    [key: string]: ChampionDetails;
   };
 };
