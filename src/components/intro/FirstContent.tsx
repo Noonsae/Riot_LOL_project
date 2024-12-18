@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const BackgroundSwitcher = () => {
+const FirstContent = () => {
   const [selectedContent, setSelectedContent] = useState("ally"); // 초기값은 "ally"
 
   const handleBackgroundChange = (
@@ -12,9 +12,9 @@ const BackgroundSwitcher = () => {
   };
 
   return (
-    <div className="flex h-full">
+    <div className="flex flex-row justify-between items-center h-[640px] ">
       {/* 버튼 그룹 */}
-      <div className="w-1/2 h-full text-center flex flex-col items-center justify-center">
+      <div className="w-[45%] h-full text-center flex flex-col items-center justify-center">
         <h3 className="text-[64px] font-bold italic mb-2">기지 파괴하기</h3>
         <p className="my-[20px]">
           넥서스는 양 팀 기지의 심장부입니다.
@@ -23,26 +23,33 @@ const BackgroundSwitcher = () => {
         </p>
 
         <div className="flex flex-row w-full items-center justify-center gap-10 mt-4">
-          <button
-            className="w-[60px] h-[60px] text-white rounded-full indent-[-9999px] bg-[url(/images/ally_btn.webp)] bg-cover"
-            value="ally" // 버튼 value로 "ally" 설정
-            onClick={handleBackgroundChange}
-          >
-            아군 넥서스
-          </button>
-          <button
-            className="w-[60px] h-[60px] text-white rounded-full indent-[-9999px] bg-[url(/images/enemy_btn.webp)] bg-cover"
-            value="enemy" // 버튼 value로 "enemy" 설정
-            onClick={handleBackgroundChange}
-          >
-            적팀 넥서스
-          </button>
+          <div>
+            <button
+              className="w-[60px] h-[60px] text-white rounded-full indent-[-9999px] bg-[url(/images/ally_btn.webp)] mb-4 bg-cover"
+              value="ally" // 버튼 value로 "ally" 설정
+              onClick={handleBackgroundChange}
+            >
+              아군 넥서스
+            </button>
+            <p>아군 넥서스</p>
+          </div>
+
+          <div>
+            <button
+              className="w-[60px] h-[60px] text-white rounded-full indent-[-9999px] bg-[url(/images/enemy_btn.webp)] mb-4 bg-cover"
+              value="enemy" // 버튼 value로 "enemy" 설정
+              onClick={handleBackgroundChange}
+            >
+              적팀 넥서스
+            </button>
+            <p>적팀 넥서스</p>
+          </div>
         </div>
       </div>
 
       {/* 조건부 렌더링된 내용 */}
       <div
-        className={`w-1/2 h-full flex flex-col justify-center items-center transition-all duration-500 text-center`}
+        className={`w-[45%] h-full flex flex-col justify-center items-center transition-all duration-500 text-center`}
       >
         {selectedContent === "ally" ? (
           // 아군 넥서스 내용
@@ -74,4 +81,4 @@ const BackgroundSwitcher = () => {
   );
 };
 
-export default BackgroundSwitcher;
+export default FirstContent;
