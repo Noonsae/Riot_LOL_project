@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ItemsPage() {
+const ItemsPage = async () => {
   const version: string = await fetchLatestVersion();
   const items: ItemDetails[] = await fetchItemData();
 
@@ -23,11 +23,13 @@ export default async function ItemsPage() {
         <h2 className="text-3xl font-bold">아이템 목록</h2>
       </div>
 
-      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 flex flex-col gap-10 w-full max-w-[1200px] mt-10 pb-[100px]">
-        {items.map((item: ItemDetails) => (
+      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 w-full max-w-[1200px] mt-10 pb-[100px]">
+        {items.map((item) => (
           <ItemCard key={`item-${item.id}`} item={item} version={version} />
         ))}
       </div>
     </article>
   );
-}
+};
+
+export default ItemsPage;
