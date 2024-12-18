@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import DarkMode from "./DarkMode";
 
-export default function Header() {
+const Header = () => {
+
   return (
     <header className="w-full h-20 fixed top-0 flex dark:bg-black dark:border-none bg-white shadow-[0px_4px_4px_rgba(0,0,0,0.2)] z-10">
       {/* Logo */}
@@ -34,9 +35,13 @@ export default function Header() {
           <li className="font-bold">
             <Link href={"/rotation"}>로테이션</Link>
           </li>
+          <li>
+            <DarkMode />
+          </li>
         </ul>
-        <DarkMode />
       </div>
     </header>
   );
 }
+
+export default Header;

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import Header from "@/components/ui/Header";
-import "@/styles/globals.css";
 
 import { ThemeProvider } from "next-themes";
+
 import MyProvider from "./providers/Provider";
+
+import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
+
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "LoLa",
@@ -21,13 +24,12 @@ export default function RootLayout({
       <link rel="icon" href="/icons/bee.png" sizes="any" />
       <MyProvider>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <body className="dark:bg-[#1a1a1a]">
-            <Header />
-            <div className="inner mt-[80px]">
-              <main className="min-h-[calc(100vh-200px)] pt-[80px]">
+          <body className="dark:bg-[#0a1428]">
+            <Header />            
+              <main className="inner mt-[80px] pt-[80px] min-h-[calc(100vh-200px)]">
                 {children}
               </main>
-            </div>
+            
             <Footer />
           </body>
         </ThemeProvider>
