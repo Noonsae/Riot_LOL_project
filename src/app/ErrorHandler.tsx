@@ -1,6 +1,12 @@
 "use client";
 
-const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
+const ErrorHandler = ({
+  error,
+  resetErrorBoundary,
+}: {
+  error: Error;
+  resetErrorBoundary: () => void;
+}) => {
   return (
     <div className="text-center text-red-500 mt-10">
       <h2 className="text-2xl font-bold mb-4">
@@ -8,7 +14,7 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
       </h2>
       <p className="mb-4">{error.message}</p>
       <button
-        onClick={() => reset()} // 다시 시도 버튼
+        onClick={resetErrorBoundary} // 에러 초기화
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition"
       >
         다시 시도하기
@@ -17,4 +23,4 @@ const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   );
 };
 
-export default Error;
+export default ErrorHandler;
