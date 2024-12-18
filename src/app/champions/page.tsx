@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Champion } from "@/types/champions";
 import { fetchChampionData } from "@/utils/serverApi";
 import { ChampionCard } from "@/components/champion/ChampionCard";
+import { sortChampionsByName } from "@/utils/sortChampionByName";
 
 export const metadata: Metadata = {
   title: "League Of Legends : 챔피언 목록",
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 
 export default async function ChampionsPage() {
   const championList: Champion[] = await fetchChampionData();
+  const sortedChampionList = sortChampionsByName(championList);
 
   return (
     <>
@@ -26,7 +28,7 @@ export default async function ChampionsPage() {
         </div>
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4">
-          {championList.map((champion: Champion) => (
+          {sortedChampionList.map((champion: Champion) => (
             <ChampionCard key={champion.id} champion={champion} />
           ))}
         </div>
