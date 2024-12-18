@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const SecondContent = () => {
-  const [selectedContent, setSelectedContent] = useState("ally"); // 초기값은 "ally"
+  const [selectedContent, setSelectedContent] = useState("tower");
 
   const handleBackgroundChange = (
     event: React.MouseEvent<HTMLButtonElement>
@@ -27,7 +27,7 @@ const SecondContent = () => {
           <div>
             <button
               className="w-[60px] h-[60px] text-white rounded-full indent-[-9999px] bg-[url(/images/tower_btn.webp)] mb-4 bg-cover"
-              value="ally" // 버튼 value로 "ally" 설정
+              value="tower" // 버튼 value로 "tower" 설정
               onClick={handleBackgroundChange}
             >
               포탑
@@ -38,7 +38,7 @@ const SecondContent = () => {
           <div>
             <button
               className="w-[60px] h-[60px] text-white rounded-full indent-[-9999px] bg-[url(/images/inhibitor_btn.webp)] mb-4 bg-cover"
-              value="enemy" // 버튼 value로 "enemy" 설정
+              value="inhibitor" // 버튼 value로 "inhibitor" 설정
               onClick={handleBackgroundChange}
             >
               억제기
@@ -52,8 +52,8 @@ const SecondContent = () => {
       <div
         className={`w-[45%] h-full flex flex-col justify-center items-center transition-all duration-500 text-center`}
       >
-        {selectedContent === "ally" ? (
-          // 아군 넥서스 내용
+        {selectedContent === "tower" ? (
+          // 포탑 관련 내용
           <div>
             <div className="w-[500px] h-[350px] bg-[url(/images/tower_bg.webp)] bg-no-repeat bg-contain bg-center -indent-[9999px]">
               포탑
@@ -66,7 +66,7 @@ const SecondContent = () => {
             </span>
           </div>
         ) : (
-          // 적팀 넥서스 내용
+          // 억제기 관련 내용
           <div>
             <div className="w-[500px] h-[350px] bg-[url(/images/inhibitor_bg.webp)] bg-no-repeat bg-contain bg-center -indent-[9999px]">
               억제기
