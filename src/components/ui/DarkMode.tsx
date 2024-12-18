@@ -7,15 +7,17 @@ export default function DarkMode() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <p
+    <div
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="cursor-pointer transition-colors duration-300"
+      className="cursor-pointer transition-colors duration-300 absolute right-[30px] top-[30px]"
     >
-      {theme === "dark" ? (
-        <Sun className="text-white hover:text-gray-300" />
-      ) : (
-        <Moon className="text-black hover:text-gray-600 dark:text-white dark:hover:text-gray-300" />
-      )}
-    </p>
+      <p>
+        {theme === "dark" ? (
+          <Sun className="text-white hover:text-[#faf488]" />
+        ) : (
+          <Moon className="text-black hover:text-gray-600 dark:text-white dark:hover:text-gray-300" />
+        )}
+      </p>
+    </div>
   );
 }

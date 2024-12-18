@@ -4,23 +4,25 @@ import DarkMode from "./DarkMode";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-center gap-32 p-3 border-b dark:border-b-white border-t-0 fixed w-full dark:bg-black bg-white z-10">
+    <header className="w-full h-20 fixed top-0 flex dark:bg-black dark:border-none bg-white shadow-[0px_4px_4px_rgba(0,0,0,0.2)] z-10">
       {/* Logo */}
-      <h1>
-        <Link href="/">
-          <Image
-            aria-hidden
-            src="/icons/bee.png"
-            alt="Home Icon"
-            width={36}
-            height={36}
-          />
-        </Link>
-      </h1>
+      <div className="w-full max-w-[1300px] px-[4%] mx-auto flex items-center justify-between">
+        <h1 className="mr-4">
+          <Link href="/" className="flex item-center">
+            <Image
+              aria-hidden
+              src="/icons/bee.png"
+              alt="Home Icon"
+              width={36}
+              height={36}
+            />
+            <p className="leading-[36px] ml-2 text-[24px] font-bold">LoLa</p>
+          </Link>
+        </h1>
 
-      {/* Nav */}
-      <div className="pr-2">
-        <ul className="flex gap-24">
+        {/* Nav */}
+        <ul className="w-[75%] flex justify-between">
+          <li className="font-bold">게임소개</li>
           <li className="font-bold">
             <Link href={"/champions"}>챔피언</Link>
           </li>
@@ -30,10 +32,8 @@ export default function Header() {
           <li className="font-bold">
             <Link href={"/rotation"}>로테이션</Link>
           </li>
-          <li>
-            <DarkMode />
-          </li>
         </ul>
+        <DarkMode />
       </div>
     </header>
   );
