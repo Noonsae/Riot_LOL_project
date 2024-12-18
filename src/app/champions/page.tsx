@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ChampionsPage() {
+const ChampionsPage = async () => {
   const championList: Champion[] = await fetchChampionData();
   const sortedChampionList = sortChampionsByName(championList);
 
@@ -36,3 +36,5 @@ export default async function ChampionsPage() {
     </>
   );
 }
+
+export default ChampionsPage;
