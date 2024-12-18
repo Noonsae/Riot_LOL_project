@@ -9,7 +9,7 @@ import {
 } from "@/types/champions";
 
 // 1.최신 버전 확인
-async function fetchLatestVersion(): Promise<string> {
+export async function fetchLatestVersion(): Promise<string> {
   try {
     // 최신 버전 정보를 가져오기 위한 API 호출
     const res = await fetch(`${API_URL}/api/versions.json`);
