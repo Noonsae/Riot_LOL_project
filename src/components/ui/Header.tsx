@@ -22,7 +22,9 @@ export default function Header() {
 
         {/* Nav */}
         <ul className="w-[75%] flex justify-between">
-          <li className="font-bold">게임소개</li>
+          <li className="font-bold">
+            <Link href={"/intro"}>게임소개</Link>
+          </li>
           <li className="font-bold">
             <Link href={"/champions"}>챔피언</Link>
           </li>

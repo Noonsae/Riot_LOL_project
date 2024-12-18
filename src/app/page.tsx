@@ -16,7 +16,7 @@ export default function Home() {
           <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center justify-items-center">
             <li>
               <Link
-                href={"/introduce"}
+                href={"/intro"}
                 className="flex flex-col gap-6 items-center justify-center"
               >
                 <Image
