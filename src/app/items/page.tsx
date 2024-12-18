@@ -1,46 +1,33 @@
-import { fetchItemData } from "@/utils/serverApi";
-import Image from "next/image";
+import { Metadata } from "next";
 import { ItemDetails } from "@/types/items";
+import { ItemCard } from "@/components/item/ItemCard";
+import { fetchItemData, fetchLatestVersion } from "@/utils/serverApi";
 
-export const revalidate = 86400;
+export const metadata: Metadata = {
+  title: "League Of Legends : 아이템 목록",
+  description:
+    "Riot Games API를 이용해 리그 오브 레전드의 모든 아이템 목록을 확인하세요.",
+  openGraph: {
+    title: "League Of Legends : 아이템 목록",
+    description: "리그 오브 레전드의 모든 아이템 정보 제공",
+  },
+};
 
-export default async function Items() {
-  const itemRes = await fetchItemData();
-  const items: Record<string, ItemDetails> = itemRes.data;
-  const version: string = itemRes.version;
+export default async function ItemsPage() {
+  const version: string = await fetchLatestVersion();
+  const items: ItemDetails[] = await fetchItemData();
 
   return (
-    <div>
-      <ul className="grid grid-cols-5 gap-4">
-        {Object.entries(items).map(([id, item]) => (
-          <li
-            key={id}
-            className="flex-col justify-center items-center gap-4 border p-4 rounded-md shadow-md bg-white"
-          >
-            <Image
-              src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${
-                item.image?.full || "default.png"
-              }`}
-              alt={item.name || "아이템"}
-              width={50}
-              height={50}
-              style={{
-                marginRight: "10px",
-              }}
-            />
-            <p className="text-lg font-semibold mb-2">
-              {item.name || "알 수 없는 아이템"}
-            </p>
-            <p className="text-sm text-gray-500 mb-2">
-              {item.plaintext || "설명이 없습니다."}
-            </p>
-            <p className="text-sm">
-              구매가격: {item.gold?.total || 0} / 판매가격:{" "}
-              {item.gold?.sell || 0}
-            </p>
-          </li>
+    <article>
+      <div>
+        <h2 className="text-3xl font-bold">아이템 목록</h2>
+      </div>
+
+      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 flex flex-col gap-10 w-full max-w-[1200px] mt-10 pb-[100px]">
+        {items.map((item: ItemDetails) => (
+          <ItemCard key={`item-${item.id}`} item={item} version={version} />
         ))}
-      </ul>
-    </div>
+      </div>
+    </article>
   );
 }
