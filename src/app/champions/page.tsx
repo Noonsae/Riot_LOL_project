@@ -1,8 +1,11 @@
 import { Metadata } from "next";
+
 import { Champion } from "@/types/champions";
+
 import { fetchChampionData } from "@/utils/serverApi";
-import { ChampionCard } from "@/components/champion/ChampionCard";
 import { sortChampionsByName } from "@/utils/sortChampionByName";
+
+import { ChampionCard } from "@/components/champion/ChampionCard";
 
 export const metadata: Metadata = {
   title: "League Of Legends : 챔피언 목록",
@@ -17,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 const ChampionsPage = async () => {
+
   const championList: Champion[] = await fetchChampionData();
   const sortedChampionList = sortChampionsByName(championList);
 
