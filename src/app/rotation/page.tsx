@@ -3,12 +3,15 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchChampionRotationData } from "@/utils/rotateApi";
+import { sortChampionsByName } from "@/utils/sortChampionByName";
 
 import { Champion } from "@/types/champions";
 
 import ChampionCardList from "@/components/champion/ChampionList";
 import { RotationSEO } from "@/components/rotation/RotationSEO";
-import { sortChampionsByName } from "@/utils/sortChampionByName";
+
+import Loading from "../loading";
+import Error from "../Error";
 
 type RotationProps = {
   allPlayers: Champion[];
@@ -16,7 +19,7 @@ type RotationProps = {
 };
 
 const RotationPage = () => {
-  const { data, isPending, error } = useQuery<RotationProps>({
+  const { data, isPending, error, refetch } = useQuery<RotationProps>({
     queryKey: ["championRotation"],
     queryFn: fetchChampionRotationData,
     retry: false,
@@ -24,9 +27,19 @@ const RotationPage = () => {
     staleTime: 1000 * 60 * 5,
   });
 
-  if (isPending) return "Loading"
-  if (error) return "error"
-    
+  if (isPending) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return (
+      <Error
+        error={error as Error} // 에러 객체 전달
+        reset={() => refetch()}
+      />
+    );
+  }
+
   const sortedAllPlayers = data?.allPlayers
     ? sortChampionsByName(data.allPlayers)
     : [];
