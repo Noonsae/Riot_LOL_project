@@ -2,7 +2,7 @@
 
 export default function CinematicBackground() {
   return (
-    <div className="absolute top-[80px] left-0 w-full h-[calc(100vh-200px)] -z-10">
+    <div className="absolute inset-0 h-full -z-10">
       {/* 비디오 */}
       <video
         className="w-full h-full object-cover"
@@ -14,7 +14,9 @@ export default function CinematicBackground() {
       />
 
       {/* 오버레이 */}
-      <div className="indent-[-9999px] absolute top-0 left-0 w-full h-full bg-white/20 dark:bg-[rgba(0,0,0,0.5)]">overlay</div>
+      <div className="indent-[-9999px] absolute inset-0 w-full h-full bg-white/20 dark:bg-[rgba(0,0,0,0.5)]">
+        <span className="sr-only">overlay</span>
+      </div>
     </div>
   );
 }
