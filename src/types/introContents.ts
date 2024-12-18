@@ -16,4 +16,9 @@ export type introContents = {
   btn_img_03?: string;
   btn_img_04?: string;
   btn_img_05?: string;
+  content_img_01?: string;
+  content_img_02?: string;
+  content_img_03?: string;
+  content_img_04?: string;
+  content_img_05?: string;
 };
