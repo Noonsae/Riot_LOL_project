@@ -6,6 +6,7 @@ export type Champion = {
   title: string;
   image: Image;
   blurb: string; // 챔피언 설명
+  version?: "";
   info: {
     [key: string]: number;
   };
@@ -35,6 +36,7 @@ export type ChampionPassive = {
   name: string;
   description: string;
   image: Image;
+  key?: string;
 };
 
 // 챔피언 스킨 정보를 나타내는 타입
@@ -50,6 +52,7 @@ export type ChampionSkill = {
   id: string;
   key: string;
   name: string;
+  passive: string;
   description: string;
   image: Image;
 };
