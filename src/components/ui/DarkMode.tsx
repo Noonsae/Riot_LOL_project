@@ -9,7 +9,7 @@ export default function DarkMode() {
   return (
     <div
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="cursor-pointer transition-colors duration-300 absolute right-[30px] top-[30px]"
+      className="cursor-pointer duration-300"
     >
       <p>
         {theme === "dark" ? (
