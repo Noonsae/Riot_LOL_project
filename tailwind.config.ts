@@ -15,10 +15,6 @@ const config: Config = {
           light: "#F5F5F5",
           dark: "#1a202c",
         },
-        darkTrack: "#1e1e1e", // 다크 모드 트랙 색상
-        darkThumb: "#3a3a3a", // 다크 모드 핸들 색상
-        lightTrack: "#e2e8f0", // 라이트 모드 트랙 색상
-        lightThumb: "#a0aec0", // 라이트 모드 핸들 색상
       },
     },
   },
