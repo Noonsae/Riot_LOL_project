@@ -1,12 +1,12 @@
+import DarkMode from "./DarkMode";
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-900">
-      <div className="max-w-7xl m-auto p-3">
-        <p className="text-white text-center text-sm md:text-base">
-          @ Copyright 2024 <span className="text-yellow-300">NoonSae.</span> All
-          rights reserved
-        </p>
-      </div>
+    <footer className="w-full bg-[#000] h-[120px] flex items-center justify-center">
+      <p className="text-white text-center text-[16px]">
+        @ Copyright 2024 <span className="text-yellow-300">NoonSae.</span> All
+        rights reserved
+      </p>
     </footer>
   );
 };
