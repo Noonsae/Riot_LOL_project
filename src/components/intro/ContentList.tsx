@@ -1,16 +1,19 @@
 "use client";
 
-import { sections } from "@/data/data";
+import { introContents } from "@/types/introContents";
+
 import Content from "./Content";
 
+import { sections } from "@/data/data";
+
 const ContentList = () => {
+
   return (
     <article>
-      {sections.map((section, index) => (
+      {sections.map((section: introContents, index) => (
         <Content
           key={index}
-          title={section.title} // section 객체에서 title을 참조
-          description={section.description} // section 객체에서 description을 참조
+          {...section}
         />
       ))}
     </article>

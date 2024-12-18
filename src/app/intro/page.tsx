@@ -26,11 +26,11 @@ const IntroPage = async () => {
       </section>
 
       <section className="w-full mt-[560px]">
-        <div className="text-center mx-auto flex flex-col items-center justify-center w-full h-[640px] border">
-          <h3 className="text-[64px] font-bold text-[#0a1428] dark:text-white mb-2 italic">
+        <div className="text-center mx-auto flex flex-col items-center justify-center w-full h-[640px]">
+          <h3 className="text-[64px] font-bold text-[#0a1428] dark:text-white mb-4 italic text-shadow-lg">
             리그 오브 레전드란?
           </h3>
-          <p className="text-[18px] mb-2">
+          <p className="text-[18px] mb-2 text-shadow-md">
             리그 오브 레전드는 5명의 강력한 챔피언으로 구성된 양 팀이 서로의
             기지를 파괴하기 위해 치열한 사투를 벌이는 전략 게임입니다.
           </p>
