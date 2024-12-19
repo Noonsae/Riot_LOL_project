@@ -2,11 +2,22 @@
 
 import { useState } from "react";
 
-const ThirdContent = () => {
-  const [selectedContent, setSelectedContent] = useState("baron");
+// 타입 정의
+type ContentData = {
+  [key: string]: {
+    title: string;
+    description: string;
+    background: string;
+    buttonBackground: string;
+  };
+};
 
-  // 상태 값에 따라 데이터를 관리
-  const contentData = {
+const ThirdContent = () => {
+  // 초기 상태를 "baron"으로 설정하고 상태 타입을 string으로 지정
+  const [selectedContent, setSelectedContent] = useState<string>("baron");
+
+  // contentData 객체에 타입 ContentData를 적용
+  const contentData: ContentData = {
     baron: {
       title: "내셔 남작",
       description:
@@ -23,6 +34,7 @@ const ThirdContent = () => {
     },
   };
 
+  // 현재 선택된 콘텐츠 데이터
   const currentContent = contentData[selectedContent];
 
   return (
