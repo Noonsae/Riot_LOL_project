@@ -9,7 +9,7 @@ const Header = () => {
       {/* Logo */}
       <div className="w-full max-w-[1300px] px-[4%] mx-auto flex items-center justify-between">
         <h1 className="mr-4">
-          <Link href="/" className="flex item-center">
+          <Link href="/" className="flex item-center p-[10px] -ml-[10px]">
             <Image
               aria-hidden
               src="/icons/bee.png"
@@ -23,17 +23,37 @@ const Header = () => {
 
         {/* Nav */}
         <ul className="w-[75%] flex justify-between">
-          <li className="font-bold">
-            <Link href={"/intro"}>게임소개</Link>
+          <li className="font-bold ">
+            <Link
+              href={"/intro"}
+              className="p-[10px] -ml-[10px] hover:text-blue-400 transition-colors duration-200"
+            >
+              게임소개
+            </Link>
           </li>
           <li className="font-bold">
-            <Link href={"/champions"}>챔피언</Link>
+            <Link
+              href={"/champions"}
+              className="p-[10px] -ml-[10px] hover:text-blue-400 transition-colors duration-200"
+            >
+              챔피언
+            </Link>
           </li>
           <li className="font-bold">
-            <Link href={"/items"}>아이템</Link>
+            <Link
+              href={"/items"}
+              className="p-[10px] -ml-[10px] hover:text-blue-400 transition-colors duration-200"
+            >
+              아이템
+            </Link>
           </li>
           <li className="font-bold">
-            <Link href={"/rotation"}>로테이션</Link>
+            <Link
+              href={"/rotation"}
+              className="p-[10px] -ml-[10px] hover:text-blue-400 transition-colors duration-200"
+            >
+              로테이션
+            </Link>
           </li>
           <li>
             <DarkMode />
