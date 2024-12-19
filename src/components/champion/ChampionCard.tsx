@@ -13,7 +13,7 @@ export function ChampionCard({ champion }: ChampionCardProps) {
   return (
     <Link
       href={`/champions/${champion.id}`}
-      className={`dark:bg-black dark:text-white items-center cursor-pointer w-[150px] h-[250px]  mb-6`}
+      className={`dark:bg-black dark:text-white items-center cursor-pointer w-[150px] h-[250px] mb-6 transition-transform duration-200 ease-in-out hover:-translate-y-[10px]`}
     >
       {/* 이미지 */}
 
