@@ -2,10 +2,18 @@
 
 import { useState } from "react";
 
-const FirstContent = () => {
-  const [selectedContent, setSelectedContent] = useState("ally");
+type ContentData = {
+  [key: string]: {
+    title: string;
+    description: string;
+    image: string;
+  };
+};
 
-  const contentData = {
+const FirstContent = () => {
+  const [selectedContent, setSelectedContent] = useState<string>("ally");
+
+  const contentData: ContentData = {
     ally: {
       title: "아군 넥서스",
       description:
@@ -30,7 +38,7 @@ const FirstContent = () => {
         <p className="my-[20px]">
           넥서스는 양 팀 기지의 심장부입니다.
           <br />
-          적의 넥서스를 먼저 파괴하는 팀이 게임에서 승리합니다.
+          적의 넥서를 먼저 파괴하는 팀이 게임에서 승리합니다.
         </p>
 
         <div className="flex flex-row w-full items-center justify-center gap-10 mt-4">
