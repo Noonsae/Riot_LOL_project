@@ -100,7 +100,6 @@ cd next-lol
 ```bash
 npm install
 ```
-<br/>
  3. 개발 서버 실행 : http://localhost:3000에 접속하여 확인
 ```bash
 npm run dev
