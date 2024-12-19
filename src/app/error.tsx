@@ -1,6 +1,6 @@
 "use client";
 
-const ErrorHandler = ({
+const Error = ({
   error,
   resetErrorBoundary,
 }: {
@@ -23,4 +23,4 @@ const ErrorHandler = ({
   );
 };
 
-export default ErrorHandler;
+export default Error;
