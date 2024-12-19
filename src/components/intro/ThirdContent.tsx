@@ -3,13 +3,27 @@
 import { useState } from "react";
 
 const ThirdContent = () => {
-  const [selectedContent, setSelectedContent] = useState("baron"); // 초기값은 "baron"
+  const [selectedContent, setSelectedContent] = useState("baron");
 
-  const handleBackgroundChange = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    setSelectedContent(event.currentTarget.value); // 버튼의 value 값을 상태로 업데이트
+  // 상태 값에 따라 데이터를 관리
+  const contentData = {
+    baron: {
+      title: "내셔 남작",
+      description:
+        "내셔 남작은 정글에서 가장 강력한 몬스터입니다. 내셔 남작을 처치하면 해당 팀 전체가 공격력 및 주문력 증가, 귀환 강화 효과를 얻으며, 챔피언 근처의 미니언이 강력해집니다.",
+      background: "/images/ally.webp",
+      buttonBackground: "/images/baron_btn.webp",
+    },
+    dragon: {
+      title: "드래곤",
+      description:
+        "드래곤은 처치 시 원소 종류에 따라 고유의 추가 효과를 부여하는 강력한 몬스터입니다. 5종류의 원소 드래곤과 장로 드래곤으로 나뉩니다.",
+      background: "/images/enemy.webp",
+      buttonBackground: "/images/dragon_btn.webp",
+    },
   };
+
+  const currentContent = contentData[selectedContent];
 
   return (
     <div className="flex flex-row justify-between items-center h-[640px]">
@@ -24,61 +38,40 @@ const ThirdContent = () => {
         </p>
 
         <div className="flex flex-row w-full items-center justify-center gap-10 mt-4">
-          <div>
-            <button
-              className="w-[60px] h-[60px] text-white rounded-full indent-[-9999px] bg-[url(/images/baron_btn.webp)] mb-4 bg-cover"
-              value="baron"
-              onClick={handleBackgroundChange}
-            >
-              내셔 남작
-            </button>
-            <p>내셔 남작</p>
-          </div>
-
-          <div>
-            <button
-              className="w-[60px] h-[60px] text-white rounded-full indent-[-9999px] bg-[url(/images/dragon_btn.webp)] mb-4 bg-cover"
-              value="dragon" // 버튼 value로 "dragon" 설정
-              onClick={handleBackgroundChange}
-            >
-              드래곤
-            </button>
-            <p>드래곤</p>
-          </div>
+          {Object.keys(contentData).map((key) => (
+            <div key={key}>
+              <button
+                className={`w-[60px] h-[60px] text-white rounded-full indent-[-9999px] mb-4 bg-cover ${
+                  selectedContent === key ? "ring-4 ring-blue-500" : ""
+                }`}
+                style={{
+                  backgroundImage: `url(${contentData[key].buttonBackground})`,
+                }}
+                value={key}
+                onClick={(e) => setSelectedContent(e.currentTarget.value)}
+              >
+                {contentData[key].title}
+              </button>
+              <p>{contentData[key].title}</p>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* 조건부 렌더링된 내용 */}
-      <div
-        className={`w-[45%] h-full flex flex-col justify-center items-center transition-all duration-500 text-center`}
-      >
-        {selectedContent === "baron" ? (
-          // 바론 관련 내용
-          <div>
-            <div className="w-[500px] h-[350px] bg-[url(/images/ally.webp)] bg-no-repeat bg-contain bg-center -indent-[9999px]">
-              내셔 남작
-            </div>
-            <p className="text-[36px] font-bold mb-[20px]">내셔 남작</p>
-            <span>
-              내셔 남작은 정글에서 가장 강력한 몬스터입니다. 내셔 남작을
-              처치하면 해당 팀 전체가 공격력 및 주문력 증가, 귀환 강화 효과를
-              얻으며, 챔피언 근처의 미니언이 강력해집니다.
-            </span>
-          </div>
-        ) : (
-          // 드래곤 관련 내용
-          <div>
-            <div className="w-[500px] h-[350px] bg-[url(/images/enemy.webp)] bg-no-repeat bg-contain bg-center -indent-[9999px]">
-              드래곤
-            </div>
-            <p className="text-[36px] font-bold mb-[20px]">드래곤</p>
-            <span>
-              드래곤은 처치 시 원소 종류에 따라 고유의 추가 효과를 부여하는
-              강력한 몬스터입니다. 5종류의 원소 드래곤과 장로 드래곤으로
-              나뉩니다.
-            </span>
-          </div>
-        )}
+      <div className="w-[45%] h-full flex flex-col justify-center items-center transition-all duration-500 text-center">
+        <div
+          className="w-[500px] h-[350px] bg-no-repeat bg-contain bg-center -indent-[9999px]"
+          style={{
+            backgroundImage: `url(${currentContent.background})`,
+          }}
+        >
+          {currentContent.title}
+        </div>
+        <p className="text-[36px] font-bold mb-[20px]">
+          {currentContent.title}
+        </p>
+        <span>{currentContent.description}</span>
       </div>
     </div>
   );
