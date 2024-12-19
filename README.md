@@ -69,23 +69,22 @@ Next.js와 TypeScript를 사용하여 개발되었으며, 스타일은 Tailwind 
 
 ## 💻 화면 구성
 #### 1. Home
-![image](https://github.com/user-attachments/assets/e7ad3b23-6657-4834-b014-dcbebce64fc7)
+![image](https://github.com/user-attachments/assets/c006a24a-438d-40ad-915e-3a970b49d1d3)
 #### 2. Intro
-![image](https://github.com/user-attachments/assets/c29ba28b-9701-415b-a4fb-b2efc9932998)
-![image](https://github.com/user-attachments/assets/52997bb4-3b09-46e2-b477-d2fe8b4ffb78)
+![image](https://github.com/user-attachments/assets/18e577d4-d530-45c1-8af3-732f31a038fc)
+![image](https://github.com/user-attachments/assets/f5ce6af3-7548-4df0-9d50-7c07a940b08c)
 #### 3. Champion
-![image](https://github.com/user-attachments/assets/b51b0d9b-2ae7-4095-91a9-a2151c29451c)
+![image](https://github.com/user-attachments/assets/9cf9c750-2572-42e5-bbfe-1fa306e6eb02)
 #### 4. Champion/details
-![image](https://github.com/user-attachments/assets/22d9a095-17f3-4314-8861-7477d9ebedce)
+![image](https://github.com/user-attachments/assets/428a3b07-d085-4654-9277-b6b8d66c9624)
 #### 5. Item
-![image](https://github.com/user-attachments/assets/389602cd-e9b6-4ccb-ba8b-69e6be4cbf66)
+![image](https://github.com/user-attachments/assets/e1af6c93-1d6c-40a0-8630-318f92d043ad)
 #### 6. Rotation
-![image](https://github.com/user-attachments/assets/4cd9ffeb-6ac5-4825-bea4-93708b12a2f0)
+![image](https://github.com/user-attachments/assets/b2ca331b-f350-4d75-b5a3-091c0a155218)
 #### 7. 동적 테마 ( 화이트 모드 )
-![image](https://github.com/user-attachments/assets/806ec253-68c1-4b9f-87c8-4bb8de2cfccf)
+![image](https://github.com/user-attachments/assets/fd936408-c873-4fdd-9b8b-14acce8aa01a)
 #### 8 . 로딩 상태 페이지
-![image](https://github.com/user-attachments/assets/22c49d90-4165-428c-8622-e63ce32d3aee)
-
+![image](https://github.com/user-attachments/assets/d488f800-f275-4dde-b336-d0a89b408d10)
 ---
 
 ## 🛠 설치 및 실행
