@@ -7,18 +7,25 @@ import { sortChampionsByName } from "@/utils/sortChampionByName";
 import { Champion } from "@/types/champions";
 import ChampionCardList from "@/components/champion/ChampionList";
 
+import Loading from "../loading";
+
 type RotationProps = {
   allPlayers: Champion[];
   newPlayers: Champion[];
 };
 
 const RotationContent = () => {
-  const { data } = useQuery<RotationProps>({
+  const { data, isPending } = useQuery<RotationProps>({
     queryKey: ["championRotation"],
     queryFn: fetchChampionRotationData,
     retry: false,
     refetchOnWindowFocus: false,
   });
+
+  // 로딩 상태 처리
+  if (isPending) {
+    return <Loading />;
+  }
 
   const sortedAllPlayers = data?.allPlayers
     ? sortChampionsByName(data.allPlayers)
