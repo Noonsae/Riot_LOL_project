@@ -41,7 +41,6 @@ const SecondContent = () => {
         <h3 className="text-[64px] font-bold italic mb-2">공격로 장악하기</h3>
         <p className="my-[20px]">
           적팀 넥서스에 도달하려면 최소 1개의 공격로를 장악해야 합니다.
-          <br />
           공격로에는 포탑과 억제기라는 방어용 구조물이 있습니다. 각 공격로에는
           3개의 포탑과 1개의 억제기가 있으며, 넥서스는 2개의 포탑이 지키고
           있습니다.
@@ -51,7 +50,7 @@ const SecondContent = () => {
           {Object.keys(contentData).map((key) => (
             <div key={key}>
               <button
-                className={`w-[60px] h-[60px] text-white rounded-full indent-[-9999px] mb-4 bg-cover ${
+                className={`w-[60px] h-[60px] text-white rounded-full indent-[-9999px] mb-4 bg-cover transform transition-transform duration-200 hover:scale-110 ${
                   selectedContent === key ? "ring-4 ring-blue-500" : ""
                 }`}
                 style={{

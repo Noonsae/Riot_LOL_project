@@ -45,7 +45,7 @@ const FirstContent = () => {
           {Object.keys(contentData).map((key) => (
             <div key={key}>
               <button
-                className={`w-[60px] h-[60px] text-white rounded-full indent-[-9999px] mb-4 bg-cover ${
+                className={`w-[60px] h-[60px] text-white rounded-full indent-[-9999px] mb-4 bg-cover transform transition-transform duration-200 hover:scale-110 ${
                   selectedContent === key ? "ring-4 ring-blue-500" : ""
                 }`}
                 style={{
