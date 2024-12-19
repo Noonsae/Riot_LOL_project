@@ -69,23 +69,22 @@ Next.js와 TypeScript를 사용하여 개발되었으며, 스타일은 Tailwind 
 
 ## 💻 화면 구성
 #### 1. Home
-![home_page](/images/home.webp)
+![image](https://github.com/user-attachments/assets/c006a24a-438d-40ad-915e-3a970b49d1d3)
 #### 2. Intro
-![Intro_page_01](/images/intro_01.webp)
-![Intro_page_02](/images/intro_02.webp)
+![image](https://github.com/user-attachments/assets/18e577d4-d530-45c1-8af3-732f31a038fc)
+![image](https://github.com/user-attachments/assets/f5ce6af3-7548-4df0-9d50-7c07a940b08c)
 #### 3. Champion
-![champion_page](/images/champion.webp)
+![image](https://github.com/user-attachments/assets/9cf9c750-2572-42e5-bbfe-1fa306e6eb02)
 #### 4. Champion/details
-![champion_details_page](/images/champion_details.webp)
+![image](https://github.com/user-attachments/assets/428a3b07-d085-4654-9277-b6b8d66c9624)
 #### 5. Item
-![item_page](/images/items.webp)
+![image](https://github.com/user-attachments/assets/e1af6c93-1d6c-40a0-8630-318f92d043ad)
 #### 6. Rotation
-![rotation_page](/images/rotation.webp)
+![image](https://github.com/user-attachments/assets/b2ca331b-f350-4d75-b5a3-091c0a155218)
 #### 7. 동적 테마 ( 화이트 모드 )
-![theme](/images/theme.webp)
+![image](https://github.com/user-attachments/assets/fd936408-c873-4fdd-9b8b-14acce8aa01a)
 #### 8 . 로딩 상태 페이지
-![loading](/images/loading.webp)
-
+![image](https://github.com/user-attachments/assets/d488f800-f275-4dde-b336-d0a89b408d10)
 ---
 
 ## 🛠 설치 및 실행
