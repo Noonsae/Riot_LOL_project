@@ -1,5 +1,10 @@
-import ContentList from "@/components/intro/ContentList";
 import { Metadata } from "next";
+
+import FifthContent from "@/components/intro/FifthContent";
+import SecondContent from "@/components/intro/SecondContent";
+import ThirdContent from "@/components/intro/ThirdContent";
+import FirstContent from "@/components/intro/FirstContent";
+import FourthContent from "@/components/intro/FourthContent";
 
 export const metadata: Metadata = {
   title: "League Of Legends : 게임소개",
@@ -41,7 +46,12 @@ const IntroPage = async () => {
         </div>
       </section>
 
-      <ContentList />
+      <FirstContent />
+      <SecondContent />
+      <ThirdContent />
+      <FourthContent />
+      <FifthContent />
+      
     </article>
   );
 };
