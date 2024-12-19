@@ -2,10 +2,20 @@
 
 import { useState } from "react";
 
-const SecondContent = () => {
-  const [selectedContent, setSelectedContent] = useState("tower");
+// 타입 정의
+type ContentData = {
+  [key: string]: {
+    title: string;
+    description: string;
+    background: string;
+    buttonBackground: string;
+  };
+};
 
-  const contentData = {
+const SecondContent = () => {
+  const [selectedContent, setSelectedContent] = useState<string>("tower");
+
+  const contentData: ContentData = {
     tower: {
       title: "포탑",
       description:
