@@ -10,7 +10,7 @@ type CardProps = {
 
 export default function Card({ href, imageSrc, alt, title }: CardProps) {
   return (
-    <li>
+    <li className="transition-transform duration-200 ease-in-out hover:-translate-y-2">
       <Link
         href={href}
         className="flex flex-col gap-6 items-center justify-center"
