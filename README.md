@@ -1,7 +1,6 @@
-// generateReadme.ts
-import fs from 'fs';
+## 프로젝트 파일 구조
 
-const projectStructure = `
+```
 📦src
  ┣ 📂app
  ┃ ┣ 📂api
@@ -65,28 +64,22 @@ const projectStructure = `
  ┃ ┣ 📜rotateApi.ts
  ┃ ┣ 📜serverApi.ts
  ┃ ┗ 📜sortChampionByName.ts
-`;
-
-const readmeContent = `# Riot Project
-
-## 프로젝트 파일 구조
-
-\`\`\`
-${projectStructure}
-\`\`\`
+```
 
 ## 주요 폴더 설명
 
 ### 📂 app
+
 Next.js의 라우트 및 페이지 설정. 각 디렉터리는 라우트를 나타냅니다.
 
 - \`api/rotation\`: 로테이션 관련 API 엔드포인트.
 - \`champions\`: 챔피언 상세 페이지와 라우팅 처리.
 - \`items\`: 아이템 페이지 구성.
 - \`rotation\`: 주간 로테이션 페이지 구성.
-- \`_providers\`: React Context Provider 설정.
+- \`\_providers\`: React Context Provider 설정.
 
 ### 📂 components
+
 프로젝트에서 재사용 가능한 UI 컴포넌트 모음.
 
 - \`champion\`: 챔피언과 관련된 컴포넌트.
@@ -97,46 +90,51 @@ Next.js의 라우트 및 페이지 설정. 각 디렉터리는 라우트를 나�
 - \`ui\`: 헤더, 푸터, 다크모드 스위치 등 공통 UI.
 
 ### 📂 constants
+
 API URL과 같은 상수를 정의.
 
 ### 📂 data
+
 정적 데이터나 더미 데이터를 저장.
 
 ### 📂 styles
+
 Tailwind 기반 글로벌 스타일 정의.
 
 ### 📂 types
+
 TypeScript로 정의된 타입 파일.
 
 ### 📂 utils
+
 프로젝트에서 활용하는 유틸리티 함수.
 
 ## 설치 및 실행 방법
 
 1. 프로젝트 클론:
-\`\`\`bash
-git clone https://github.com/your-repo/riot-project.git
-\`\`\`
+   \`\`\`bash
+   git clone https://github.com/your-repo/riot-project.git
+   \`\`\`
 
 2. 의존성 설치:
-\`\`\`bash
-npm install
-\`\`\`
+   \`\`\`bash
+   npm install
+   \`\`\`
 
 3. 개발 서버 실행:
-\`\`\`bash
-npm run dev
-\`\`\`
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
 4. 프로덕션 빌드:
-\`\`\`bash
-npm run build
-\`\`\`
+   \`\`\`bash
+   npm run build
+   \`\`\`
 
 5. 프로덕션 서버 실행:
-\`\`\`bash
-npm start
-\`\`\`
+   \`\`\`bash
+   npm start
+   \`\`\`
 
 ---
 
