@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { ThemeProvider } from "next-themes";
 
-import MyProvider from "./providers/Provider";
+import MyProvider from "./_providers/Provider";
 
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
