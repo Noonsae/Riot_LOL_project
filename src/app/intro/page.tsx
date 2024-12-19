@@ -31,7 +31,7 @@ const IntroPage = async () => {
       </section>
 
       <section className="w-full mt-[560px]">
-        <div className="text-center mx-auto flex flex-col items-center justify-center w-full h-[640px]">
+        <div className="text-center mx-auto flex flex-col items-center justify-center w-full mt-[800px] mb-[80px]">
           <h3 className="text-[64px] font-bold text-[#0a1428] dark:text-white mb-4 italic text-shadow-lg">
             리그 오브 레전드란?
           </h3>

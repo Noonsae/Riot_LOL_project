@@ -42,7 +42,7 @@ const FifthContent = () => {
   const currentContent = contentData[selectedContent];
 
   return (
-    <div className="flex flex-row justify-between items-center h-[640px] mb-[100px]">
+    <div className="flex flex-row justify-between items-center h-[640px] mb-[150px]">
       {/* 버튼 그룹 */}
       <div className="w-[45%] h-full text-center flex flex-col items-center justify-center">
         <h3 className="text-[64px] font-bold italic mb-2">스킬 사용하기</h3>
