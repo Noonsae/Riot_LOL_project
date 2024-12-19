@@ -29,13 +29,13 @@ const Detail = ({ champion, version }: DetailProps) => {
   return (
     <section className="relative w-full max-w-[1200px] text-white">
       <div
-        className="absolute inset-0 -z-10 bg-cover bg-no-repeat bg-fixed opacity-80 filter grayscale-[30%] -mt-[80px] -indent-[9999px]"
+        className="absolute inset-0 -z-10 bg-cover bg-no-repeat bg-fixed opacity-80 filter grayscale-[30%] -mt-[80px] "
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), 
             url(${SPLASH_IMG_URL}/${champion.id}_0.jpg)`,
         }}
       >
-        스플래쉬 이미지 배경
+        <span className="sr-only">스플래쉬 이미지 배경</span>
       </div>
 
       <div className="relative m-auto min-h-screen max-w-full pb-20 container px-[50px]">
