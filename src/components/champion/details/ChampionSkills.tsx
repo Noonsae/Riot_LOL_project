@@ -34,7 +34,7 @@ const ChampionSkills = ({
               width={64}
               height={64}
               alt={passive.name}
-              className={commonImageClasses}
+              className={`${commonImageClasses} transform transition-transform duration-200 hover:scale-110`}
               onClick={() =>
                 setSelectedSpell({
                   name: passive.name,
@@ -60,7 +60,7 @@ const ChampionSkills = ({
                 width={64}
                 height={64}
                 priority
-                className={commonImageClasses}
+                className={`${commonImageClasses} transform transition-transform duration-200 hover:scale-110`}
                 onClick={() =>
                   setSelectedSpell({
                     name: spell.name,
