@@ -8,7 +8,7 @@ Next.js와 TypeScript를 사용하여 개발되었으며, 스타일은 Tailwind 
 #### - 챔피언 목록 페이지 (/champions) : SSR 방식으로 구현
 #### - 챔피언 디테일 페이지 (/champions/[id]) : CSR 방식으로 구현
 #### - 아이템 목록 페이지 (/items) : SSR 방식으로 구현
-#### - 게임 소개 페이지 (/intro) : SSR 방식으로 구현
+#### - 게임 소개 페이지 (/intro) : SSG 방식으로 구현
 #### - 챔피언 로테이션 페이지 (/rotation) : CSR 방식으로 구현
 
 ---
